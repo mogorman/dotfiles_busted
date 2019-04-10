@@ -183,13 +183,7 @@ hardware.bumblebee.enable = true;
 
 
 nixpkgs.config.allowUnfree = true;
-#services.xserver.videoDrivers = [ "nvidia" ];
 hardware.opengl.driSupport32Bit = true;
-#  hardware.nvidia.optimus_prime.enable = true;
-  # Bus ID of the NVIDIA GPU. You can find it using lspci
-#  hardware.nvidia.optimus_prime.nvidiaBusId = "PCI:1:0:0";
-  # Bus ID of the Intel GPU. You can find it using lspci
-#  hardware.nvidia.optimus_prime.intelBusId = "PCI:0:2:0";
 
 hardware.pulseaudio.package = pkgs.pulseaudioFull;
 hardware.bluetooth.enable = true;

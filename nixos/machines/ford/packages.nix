@@ -20,6 +20,7 @@ environment.systemPackages = with pkgs; [
   openssl
   mysql
   gitAndTools.gitFull
+  gitAndTools.git-crypt
   lsof
   xorg.xev
   pianobar
@@ -51,7 +52,6 @@ environment.systemPackages = with pkgs; [
   ack
   iftop
   curl
-  gitAndTools.git-crypt
   chromium
   youtube-dl
   arandr
@@ -134,7 +134,6 @@ environment.systemPackages = with pkgs; [
   direnv
   sshuttle
   gmrun
-  swift
   qemu
   hstr
   spotify
