@@ -152,6 +152,7 @@ environment.systemPackages = with pkgs; [
   ditaa
   graphviz
   htop
+  nix-top
 ];
 
 
