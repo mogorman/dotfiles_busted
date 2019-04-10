@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./packages.nix
       ./secrets.nix
+      ../../common.nix
     ];
 
 
@@ -51,33 +52,12 @@
   networking.hostName = "ford"; # Define your hostname.
 #  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
-  # Select internationalisation properties.
-   i18n = {
-     consoleFont = "Lat2-Terminus16";
-     consoleKeyMap = "us";
-     defaultLocale = "en_US.UTF-8";
-   };
-  fonts = {
-    enableFontDir = true;
-    enableGhostscriptFonts = true;
-    fonts = with pkgs; [
-      corefonts  # Micrsoft free fonts
-      inconsolata  # monospaced
-      ubuntu_font_family  # Ubuntu fonts
-      terminus_font
-      unifont # some international languages
-    ];
-  };
-
-  # Set your time zone.
-   time.timeZone = "US/Eastern";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-   programs.bash.enableCompletion = true;
    programs.mtr.enable = true;
    programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
 
@@ -122,12 +102,6 @@
     extraGroups = [ "networkmanager" "wheel" "dialout" "vboxusers" "docker" "libvirtd" ];
      uid = 1000;
    };
-
-  # This value determines the NixOS release with which your system is to be
-  # compatible, in order to avoid breaking some software such as database
-  # servers. You should change this only after NixOS release notes say you
-  # should.
-  system.stateVersion = "18.09"; # Did you read the comment?
 
 
   networking.extraHosts = "
@@ -182,7 +156,6 @@ hardware.bumblebee.enable = true;
 
 
 
-nixpkgs.config.allowUnfree = true;
 hardware.opengl.driSupport32Bit = true;
 
 hardware.pulseaudio.package = pkgs.pulseaudioFull;

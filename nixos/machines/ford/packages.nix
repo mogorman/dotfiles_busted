@@ -154,26 +154,6 @@ environment.systemPackages = with pkgs; [
   nix-top
 ];
 
-
-nixpkgs.config = {
-  pulseaudio = true;
-  allowUnfree = true;
-
-  packageOverrides = super: {
-    xfce = super.xfce // {
-      gvfs = pkgs.gvfs;
-    };
-    steam = super.steam.override {
-      withPrimus = true;
-      extraPkgs = p: with p; [
-        glxinfo        # for diagnostics
-        nettools       # for `hostname`, which some scripts expect
-        bumblebee      # for optirun
-      ];
-    };
-  };
-};
-
 programs.bash.enableCompletion = true;
 environment.profileRelativeEnvVars = {
   GRC_BLOCKS_PATH = [ "/share/gnuradio/grc/blocks" ];
