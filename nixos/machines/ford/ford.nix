@@ -244,7 +244,7 @@ zramSwap.numDevices = 8;
 boot.tmpOnTmpfs = true;
 #android_sdk.accept_license = true;
 
-environment.etc."nixos-label".text = config.system.nixos.label;
+environment.etc."nixos/active".text = config.system.nixos.label;
 
 services.undervolt = {
   enable = true;
