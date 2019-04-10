@@ -13,7 +13,7 @@ environment.systemPackages = with pkgs; [
   emacs
   smplayer
   mplayer
-  pavucontrol 
+  pavucontrol
   paprefs
   screen
   packer
@@ -145,12 +145,13 @@ environment.systemPackages = with pkgs; [
   syncthing
   qsyncthingtray
   mcomix
-  ispell 
+  ispell
   imagemagick
-  plantuml 
+  plantuml
   xdotool
   ditaa
   graphviz
+  htop
 ];
 
 
