@@ -13,8 +13,6 @@
 
   system.autoUpgrade.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-  
   i18n = {
     consoleKeyMap = "us";
     defaultLocale = "en_US.UTF-8";
@@ -53,17 +51,14 @@ nixpkgs.config = {
         bumblebee      # for optirun
       ];
     };
-  };
-};
-
-  nixpkgs.config.packageOverrides = pkgs: with pkgs; {
-    mplayer = pkgs.mplayer.override {
+    mplayer = super.mplayer.override {
       pulseSupport = true;
     };
-
     unstable = import <unstable> {
       config = config.nixpkgs.config;
     };
 
   };
+};
+
 }
