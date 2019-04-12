@@ -213,7 +213,7 @@ services.nscd.config = ''
 '';
 zramSwap.enable = true;
 zramSwap.memoryPercent = 100;
-zramSwap.numDevices = 8;
+zramSwap.numDevices = 1;
 boot.tmpOnTmpfs = true;
 #android_sdk.accept_license = true;
 
