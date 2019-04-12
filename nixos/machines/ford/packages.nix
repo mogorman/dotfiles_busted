@@ -114,7 +114,7 @@ environment.systemPackages = with pkgs; [
  steam-run
   wine
   transmission-gtk
-  xpra
+#  xpra
   mysql-workbench
   python
   bc
