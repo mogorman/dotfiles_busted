@@ -78,7 +78,7 @@ environment.systemPackages = with pkgs; [
   audacity
   gtk_engines
   clearlooks-phenix
-  xfce.gtk-xfce-engine   
+  xfce.gtk-xfce-engine
   xorg.xmodmap
   lxappearance
   #androidsdk
