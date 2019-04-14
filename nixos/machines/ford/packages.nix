@@ -153,8 +153,8 @@ environment.systemPackages = with pkgs; [
   htop
   nix-top
   (lib.overrideDerivation lispPackages.stumpwm (x: {
-    linkedSystems = x.linkedSystems ++ ["clx-truetype" "xkeyboard" "xembed" "clx" "package"];
-    buildInputs = x.buildInputs ++ (with lispPackages; [clx-truetype xkeyboard xembed clx package]);
+    linkedSystems = x.linkedSystems ++ ["clx-truetype" "xkeyboard" "xembed" "clx" ];
+    buildInputs = x.buildInputs ++ (with lispPackages; [clx-truetype xkeyboard xembed clx ]);
   }))
 ];
 
