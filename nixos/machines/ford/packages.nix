@@ -152,7 +152,9 @@ environment.systemPackages = with pkgs; [
   graphviz
   htop
   nix-top
-  stumpwm
+  (lib.overrideDerivation lispPackages.stumpwm (x: {
+    linkedSystems = x.linkedSystems ++ ["clx-truetype" "xkeyboard" "xembed"];
+    buildInputs = x.buildInputs ++ (with lispPackages; [clx-truetype xkeyboard xembed]);}))
 ];
 
 programs.bash.enableCompletion = true;
