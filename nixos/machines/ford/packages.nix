@@ -152,6 +152,7 @@ environment.systemPackages = with pkgs; [
   graphviz
   htop
   nix-top
+  stumpwm
 ];
 
 programs.bash.enableCompletion = true;
