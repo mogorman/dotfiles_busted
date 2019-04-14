@@ -57,7 +57,7 @@ nixpkgs.config = {
     unstable = import <unstable> {
       config = config.nixpkgs.config;
     };
-    stumpwm = pkgs.lib.overrideDerivation lispPackages.stumpwm (x: {
+    stumpwm = pkgs.lib.overrideDerivation super.lispPackages.stumpwm (x: {
       linkedSystems = x.linkedSystems ++ ["clx-truetype" "xkeyboard" "xembed"];
       buildInputs = x.buildInputs ++ (with lispPackages; [clx-truetype xkeyboard xembed]);
     });
