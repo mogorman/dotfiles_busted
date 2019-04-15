@@ -94,8 +94,8 @@
   # services.xserver.windowManager.stumpwm.enable = true;
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
-  
+  # services.xserver.desktopManager.plasma5.enable = true
+  programs.ssh.startAgent = false;
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.extraUsers.mog = {
      isNormalUser = true;
