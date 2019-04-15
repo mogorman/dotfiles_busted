@@ -34,6 +34,8 @@
   time.timeZone = "US/Eastern";
   
   programs.bash.enableCompletion = true;
+  
+hardware.nitrokey.enable = true;
 
 nixpkgs.config = {
   pulseaudio = true;

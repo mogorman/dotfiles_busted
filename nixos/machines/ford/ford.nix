@@ -100,7 +100,7 @@
      isNormalUser = true;
     createHome = true;
     group = "users";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "vboxusers" "docker" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "vboxusers" "docker" "libvirtd" "nitrokey" ];
      uid = 1000;
    };
 

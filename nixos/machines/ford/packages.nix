@@ -153,6 +153,7 @@ environment.systemPackages = with pkgs; [
   htop
   nix-top
   home-manager
+  nitrokey-app
   (lib.overrideDerivation lispPackages.stumpwm (x: {
     linkedSystems = x.linkedSystems ++ ["clx-truetype" "xkeyboard" "xembed" ];
     buildInputs = x.buildInputs ++ (with lispPackages; [clx-truetype xkeyboard xembed ]);
