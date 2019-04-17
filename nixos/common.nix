@@ -36,7 +36,7 @@
   programs.bash.enableCompletion = true;
   
 hardware.nitrokey.enable = true;
-
+security.pam.enableSSHAgentAuth = true;
 nixpkgs.config = {
   pulseaudio = true;
   allowUnfree = true;
