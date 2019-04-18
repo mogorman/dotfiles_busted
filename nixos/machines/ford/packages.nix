@@ -5,6 +5,9 @@ programs.firejail = {
   enable = true;
   wrappedBinaries = {
     firefox = "${lib.getBin pkgs.firefox}/bin/firefox";
+    google-chrome = "${lib.getBin pkgs.google-chrome}/bin/google-chrome-stable";
+    spotify = "${lib.getBin pkgs.spotify}/bin/spotify";
+    slack = "${lib.getBin pkgs.slack}/bin/slack";
   };
 };
 
@@ -58,7 +61,6 @@ environment.systemPackages = with pkgs; [
   ack
   iftop
   curl
-  chromium
   youtube-dl
   arandr
   pasystray
@@ -88,7 +90,6 @@ environment.systemPackages = with pkgs; [
   xorg.xmodmap
   lxappearance
   #androidsdk
-  google-chrome
   whois
   nss
   zoom-us
@@ -142,8 +143,6 @@ environment.systemPackages = with pkgs; [
   gmrun
   qemu
   hstr
-  spotify
-  slack
   qcachegrind
   gnome3.zenity
   synergy
