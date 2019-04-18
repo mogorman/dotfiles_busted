@@ -1,10 +1,16 @@
 { config, lib, pkgs, ... }:
 {
 
+programs.firejail = {
+  enable = true;
+  wrappedBinaries = {
+    firefox = "${lib.getBin pkgs.firefox}/bin/firefox";
+  };
+};
+
 environment.systemPackages = with pkgs; [
   vim
   wget
-  firefox
   usbutils
   pciutils
   blueman
