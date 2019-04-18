@@ -72,6 +72,33 @@
 
 (push '(#\m fmt-modeline-window-list) *screen-mode-line-formatters*)
 
+(setf *screen-mode-line-format*
+      (list
+       ;;       "䷹ "
+;;       " 兌 "
+       "[^B%n^b] "
+;;       '(:eval (run-shell-command "date '+%-I:%M %b %-d'|tr -d [:cntrl:]" t))
+        '(:eval (run-shell-command "date '+%-I:%M'|tr -d [:cntrl:]" t))
+       "|"
+       ;;    "%B"
+    ;;   '(:eval (run-shell-command "/home/mog/.bin/battery.sh|tr -d [:cntrl:]" t))
+       "|"
+;       '(:eval (run-shell-command "ping -c 1 -W 1 8.8.8.8 2>/dev/null >/dev/null && printf '' || printf '^1^R^BDown^b^r^n|'" t))
+     ;; '(:eval (run-shell-command "acpi|cut -f2 -d','|tr -d ' '|tr -d [:cntrl:]" t))
+       ;; "^B^[^3*"
+       ;; '(:eval (run-shell-command "/sbin/iwconfig wlan0 | grep ESSID| cut -f2 -d'\"' |tr -d [:cntrl:]" t))
+       ;; ":"
+       ;; '(:eval (run-shell-command "/sbin/ifconfig wlan0|grep \"inet addr\"| cut -f2 -d':'|cut -f1 -d' '| cut -f4 -d'.'|tr -d [:cntrl:]" t))
+       ;; "^]^b"
+       ;; "|^B^[^3*"
+       ;; '(:eval (run-shell-command "upower -i /org/freedesktop/UPower/devices/battery_BAT1|grep \"time to \"|awk '{ print $4  substr($5, 0, 1)}' | tr -d [:cntrl:]" t))
+       ;; "^]^b"
+;;       "%b"
+       ;; "|"
+       ;; '(:eval (run-shell-command "/home/mog/.bin/pa-vol.sh get_num|tr -d [:cntrl:]" t))
+       " %W"
+))
+
 ;;(setf *mode-line-pad-y* 3)
 
 (setf *window-format* "%n:%0s%t")
@@ -93,30 +120,15 @@
     (when cmd
       (eval-command cmd t))))
 
-;; Read some doc
-(define-key *root-map* (kbd "d") "exec gv")
-;; Browse somewhere
-(define-key *root-map* (kbd "b") "colon1 exec firefox http://www.")
-;; Ssh somewhere
-(define-key *root-map* (kbd "C-s") "colon1 exec xterm -e ssh ")
-;; Lock screen
-(define-key *root-map* (kbd "C-l") "exec xlock")
+(define-key *root-map* (kbd "l") "exec /usr/bin/env xscreensaver-command -lock")
+(define-key *root-map* (kbd "f") "fullscreen-with-modeline")
 
-;; Web jump (works for Google and Imdb)
-(defmacro make-web-jump (name prefix)
-  `(defcommand ,(intern name) (search) ((:rest ,(concatenate 'string name " search: ")))
-    (substitute #\+ #\Space search)
-    (run-shell-command (concatenate 'string ,prefix search))))
+(define-key *root-map* (kbd "RET") "exec /usr/bin/env roxterm")
+(define-key *root-map* (kbd "C-RET") "exec /usr/bin/env roxterm")
 
-(make-web-jump "google" "firefox http://www.google.fr/search?q=")
-(make-web-jump "imdb" "firefox http://www.imdb.com/find?q=")
+(define-key *root-map* (kbd "c") "chromium")
+(define-key *root-map* (kbd "C-c") "chromium")
 
-;; C-t M-s is a terrble binding, but you get the idea.
-(define-key *root-map* (kbd "M-s") "google")
-(define-key *root-map* (kbd "i") "imdb")
-
-;; Message window font
-;;(set-font "-xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-15")
 
 ;;; Define window placement policy...
 
@@ -152,3 +164,48 @@
 (define-frame-preference "Emacs"
   (1 t t :restore "emacs-editing-dump" :title "...xdvi")
   (0 t t :create "emacs-dump" :class "Emacs"))
+
+(define-key *root-map* (kbd "~") "exec")
+(define-key *root-map* (kbd "C-r") "exec")
+(define-key *root-map* (kbd "!") "gmove 1")
+(define-key *root-map* (kbd "@") "gmove F")
+(define-key *root-map* (kbd "#") "gmove 3")
+(define-key *root-map* (kbd "$") "gmove 4")
+(define-key *root-map* (kbd "%") "gmove 5")
+(define-key *root-map* (kbd "^") "gmove 6")
+(define-key *root-map* (kbd "&") "gmove 7")
+(define-key *root-map* (kbd "*") "gmove 8")
+(define-key *root-map* (kbd "(") "gmove 9")
+
+
+(define-key *root-map* (kbd "1") "gselect 1")
+(define-key *root-map* (kbd "2") "gselect F")
+(define-key *root-map* (kbd "3") "gselect 3")
+(define-key *root-map* (kbd "4") "gselect 4")
+(define-key *root-map* (kbd "5") "gselect 5")
+(define-key *root-map* (kbd "6") "gselcet 6")
+(define-key *root-map* (kbd "7") "gselect 7")
+(define-key *root-map* (kbd "8") "gselect 8")
+(define-key *root-map* (kbd "9") "gselect 9")
+
+(undefine-key *root-map* (kbd "F1"))
+(undefine-key *root-map* (kbd "F2"))
+(undefine-key *root-map* (kbd "F3"))
+(undefine-key *root-map* (kbd "F4"))
+(undefine-key *root-map* (kbd "F5"))
+(undefine-key *root-map* (kbd "F6"))
+(undefine-key *root-map* (kbd "F7"))
+(undefine-key *root-map* (kbd "F8"))
+(undefine-key *root-map* (kbd "F9"))
+(undefine-key *root-map* (kbd "F10"))
+(undefine-key *root-map* (kbd "F11"))
+(undefine-key *root-map* (kbd "F12"))
+
+(gnewbg-float "F")
+(gnewbg "3")
+(gnewbg "4")
+(gnewbg "5")
+(gnewbg "6")
+(gnewbg "7")
+(gnewbg "8")
+(gnewbg "9")

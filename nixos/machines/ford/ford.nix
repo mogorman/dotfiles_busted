@@ -252,7 +252,9 @@ boot.plymouth.logo =
 #    uncoreOffset = -70;
 #    analogioOffset = -70;
 #};
-
+services.xserver.desktopManager.xfce.enableXfwm = false;
+services.xserver.desktopManager.xfce.noDesktop = true;
+services.xserver.desktopManager.xfce.thunarPlugins = [ pkgs.xfce.thunar-archive-plugin  ];
 nix.binaryCaches = [
   "https://cache.nixos.org/"
 
