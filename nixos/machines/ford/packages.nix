@@ -5,13 +5,14 @@ programs.firejail = {
   enable = true;
   wrappedBinaries = {
     firefox = "${lib.getBin pkgs.firefox}/bin/firefox";
-    google-chrome = "${lib.getBin pkgs.google-chrome}/bin/google-chrome-stable";
-    spotify = "${lib.getBin pkgs.spotify}/bin/spotify";
+    google-chrome = "${lib.getBin pkgs.google-chrome}/bin/google-chrome";
+#    spotify = "${lib.getBin pkgs.spotify}/bin/spotify";
     slack = "${lib.getBin pkgs.slack}/bin/slack";
   };
 };
 
 environment.systemPackages = with pkgs; [
+  spotify  # figure out jail and fix
   vim
   wget
   usbutils
