@@ -126,8 +126,8 @@
 (define-key *root-map* (kbd "RET") "exec /usr/bin/env roxterm")
 (define-key *root-map* (kbd "C-RET") "exec /usr/bin/env roxterm")
 
-(define-key *root-map* (kbd "c") "chromium")
-(define-key *root-map* (kbd "C-c") "chromium")
+(define-key *root-map* (kbd "c") "chrome")
+(define-key *root-map* (kbd "C-c") "chrome")
 
 
 ;;; Define window placement policy...

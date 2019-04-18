@@ -255,6 +255,9 @@ boot.plymouth.logo =
 services.xserver.desktopManager.xfce.enableXfwm = false;
 services.xserver.desktopManager.xfce.noDesktop = true;
 services.xserver.desktopManager.xfce.thunarPlugins = [ pkgs.xfce.thunar-archive-plugin  ];
+services.xserver.desktopManager.xfce.extraSessionCommands = ''
+stumpwm
+'';
 nix.binaryCaches = [
   "https://cache.nixos.org/"
 
