@@ -158,8 +158,8 @@ environment.systemPackages = with pkgs; [
   gpa
   gparted
   (lib.overrideDerivation lispPackages.stumpwm (x: {
-    linkedSystems = x.linkedSystems ++ ["clx-truetype" "xkeyboard" "xembed" "xml-emitter" ];
-    buildInputs = x.buildInputs ++ (with lispPackages; [clx-truetype xkeyboard xembed xml-emitter ]);
+    linkedSystems = x.linkedSystems ++ ["clx-truetype" "xkeyboard" "xembed" ];
+    buildInputs = x.buildInputs ++ (with lispPackages; [clx-truetype xkeyboard xembed ]);
   }))
 ];
 
