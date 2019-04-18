@@ -153,3 +153,6 @@
   (1 t t :restore "emacs-editing-dump" :title "...xdvi")
   (0 t t :create "emacs-dump" :class "Emacs"))
 
+
+(load-module "notify")
+(notify:notify-server-toggle)
