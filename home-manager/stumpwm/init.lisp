@@ -48,8 +48,8 @@
   (run-or-raise "firefox" '(:instance "firefox")))
 
 (defcommand chrome () ()
-  "Start google-chrome-stable unless it is already running, in which case focus it."
-  (run-or-raise "google-chrome-stable" '(:instance "google-chrome-stable")))
+  "Start google-chrome unless it is already running, in which case focus it."
+  (run-or-raise "google-chrome" '(:instance "google-chrome")))
 
 (defgeneric modeline-window-list (group))
 
