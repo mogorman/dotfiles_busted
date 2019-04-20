@@ -3,6 +3,7 @@
 ;; Here is a sample .stumpwmrc file
 
 (in-package :stumpwm)
+(setf *startup-message* nil)
 
 ;;"Define mode line background color."
 (setf *mode-line-background-color* "#1EB5C4")
@@ -17,11 +18,20 @@
 (set-focus-color  "#20E0D6")
 (set-unfocus-color "#3b456a")
 
+(set-fg-color "#1EB5C4")
+(set-bg-color "#3b456a")
+
+
 (set-module-dir "~/.stumpwm.d/modules")
 
-(enable-mode-line (current-screen) (current-head))
+;;(toggle-mode-line (current-screen) (current-head))
+
+;;(enable-mode-line (current-screen) head t)
+(enable-mode-line (current-screen) (current-head) t)
 
 (load-module "stumptray")
+(setf *tray-win-background* "#1EB5C4")
+
 (stumptray:stumptray)
 
 ;; change the prefix key to something else
@@ -109,7 +119,7 @@
 
 
 
-(set-font "-*-terminus-*-r-*-*-12-*-*-*-*-*-*-*")
+(set-font "-*-terminus-bold-r-*-*-14-*-*-*-*-*-*-*")
 
 
 (group-rename (current-group) "1")
@@ -121,6 +131,7 @@
       (eval-command cmd t))))
 
 (define-key *root-map* (kbd "l") "exec /usr/bin/env xscreensaver-command -lock")
+(define-key *root-map* (kbd "L") "exec /usr/bin/env xfce4-session-logout --hibernate")
 (define-key *root-map* (kbd "f") "fullscreen-with-modeline")
 
 (define-key *root-map* (kbd "RET") "exec /usr/bin/env roxterm")
@@ -179,3 +190,14 @@
 (gnewbg "7")
 (gnewbg "8")
 (gnewbg "9")
+
+
+;;"Define mode line background color."
+(setf *mode-line-background-color* "#1EB5C4")
+
+;;"Define mode line foreground color."
+(setf *mode-line-foreground-color* "#3b456a")
+
+;;"Define mode line border color."
+(setf *mode-line-border-color* "#242A35")
+
