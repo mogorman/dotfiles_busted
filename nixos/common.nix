@@ -1,4 +1,7 @@
 { config, lib, pkgs, ... }:
+let
+  unstable = import <unstable> { config.allowUnfree = true; };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -37,11 +40,13 @@
   
 hardware.nitrokey.enable = true;
 security.pam.enableSSHAgentAuth = true;
+
+
 nixpkgs.config = {
   pulseaudio = true;
   allowUnfree = true;
 
-  packageOverrides = super: {
+  packageOverrides = super: let self = super.pkgs; in {
     xfce = super.xfce // {
       gvfs = pkgs.gvfs;
     };
@@ -56,9 +61,11 @@ nixpkgs.config = {
     mplayer = super.mplayer.override {
       pulseSupport = true;
     };
-    unstable = import <unstable> {
-      config = config.nixpkgs.config;
-    };
+#    linuxPackages = super.linuxPackages_latest.extend (self: super: {
+#      nvidiaPackages = super.nvidiaPackages // {
+#        stable = unstable.linuxPackages_latest.nvidiaPackages.stable_418;
+#      };
+#    });
   };
 };
 
