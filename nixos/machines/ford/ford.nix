@@ -259,6 +259,7 @@ services.xserver.desktopManager.xfce.extraSessionCommands = ''
 stumpwm
 '';
 services.keybase.enable = true;
+services.kbfs.enable = true;
 
 nix.binaryCaches = [
   "https://cache.nixos.org/"
