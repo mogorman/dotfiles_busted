@@ -2,7 +2,7 @@
 {
   home.file.".stumpwm.d".source = "/home/mog/code/dotfiles/home-manager/stumpwm";
   services.dunst.enable = true;
-  
+
   services.dunst.settings = {
     global = {
       geometry = "0x0-0+20";

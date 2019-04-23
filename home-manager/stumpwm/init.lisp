@@ -140,6 +140,7 @@
 (define-key *root-map* (kbd "c") "chrome")
 (define-key *root-map* (kbd "C-c") "chrome")
 
+(define-key *root-map* (kbd "`") "refresh-heads")
 
 ;;; Define window placement policy...
 

@@ -258,6 +258,8 @@ services.xserver.desktopManager.xfce.thunarPlugins = [ pkgs.xfce.thunar-archive-
 services.xserver.desktopManager.xfce.extraSessionCommands = ''
 stumpwm
 '';
+services.keybase.enable = true;
+
 nix.binaryCaches = [
   "https://cache.nixos.org/"
 
