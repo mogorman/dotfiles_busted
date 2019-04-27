@@ -11,6 +11,7 @@
       ./packages.nix
       ./secrets.nix
       ../../common.nix
+      ../../services/kibana_es.ex
     ];
 
 
