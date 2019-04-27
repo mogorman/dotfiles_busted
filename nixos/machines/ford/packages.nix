@@ -168,7 +168,6 @@ environment.systemPackages = with pkgs; [
     buildInputs = x.buildInputs ++ (with lispPackages; [clx-truetype xkeyboard xembed ]);
   }))
   stumpish
-  linuxPackages.tp_smapi
 ];
 
 programs.bash.enableCompletion = true;

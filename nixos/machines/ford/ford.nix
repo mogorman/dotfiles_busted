@@ -123,7 +123,7 @@ hardware.bumblebee.enable = true;
     libvdpau-va-gl
 ];
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call tp_smapi ];
 
   systemd.services.cpu-throttling = {
     enable = true;
