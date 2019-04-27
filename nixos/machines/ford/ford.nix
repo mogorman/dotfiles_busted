@@ -123,7 +123,7 @@ hardware.bumblebee.enable = true;
     libvdpau-va-gl
 ];
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call tp_smapi ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
 
   systemd.services.cpu-throttling = {
     enable = true;
@@ -261,6 +261,12 @@ stumpwm
 '';
 services.keybase.enable = true;
 services.kbfs.enable = true;
+
+services.tlp.enable = true;
+services.tlp.extraConfig = ''
+  START_CHARGE_THRESH_BAT0=40
+  STOP_CHARGE_THRESH_BAT0=80
+'';
 
 nix.binaryCaches = [
   "https://cache.nixos.org/"
