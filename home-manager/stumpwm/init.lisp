@@ -131,6 +131,7 @@
       (eval-command cmd t))))
 
 (define-key *root-map* (kbd "l") "exec /usr/bin/env xscreensaver-command -lock")
+(define-key *root-map* (kbd "q") "exec /usr/bin/env xfce4-session-logout")
 (define-key *root-map* (kbd "L") "exec /usr/bin/env xfce4-session-logout --hibernate")
 (define-key *root-map* (kbd "f") "fullscreen-with-modeline")
 
