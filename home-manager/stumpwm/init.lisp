@@ -135,9 +135,12 @@
 (define-key *root-map* (kbd "L") "exec /usr/bin/env xfce4-session-logout --hibernate")
 (define-key *root-map* (kbd "f") "fullscreen-with-modeline")
 
+(define-key *root-map* (kbd "u") "unfloat-this")
+
 (define-key *root-map* (kbd "RET") "exec /usr/bin/env roxterm")
 (define-key *root-map* (kbd "C-RET") "exec /usr/bin/env roxterm")
 
+(define-key *root-map* (kbd "F") "firefox")
 (define-key *root-map* (kbd "c") "chrome")
 (define-key *root-map* (kbd "C-c") "chrome")
 
