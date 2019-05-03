@@ -176,6 +176,13 @@ environment.profileRelativeEnvVars = {
   GRC_BLOCKS_PATH = [ "/share/gnuradio/grc/blocks" ];
 };
 
+environment.etc."nixos/current-system-packages".text = 
+let
+  packages = builtins.map (p: "${p.name}") config.environment.systemPackages;
+  sortedUnique = builtins.sort builtins.lessThan (lib.unique packages);
+  formatted = builtins.concatStringsSep "\n" sortedUnique;
+in formatted;
+
 environment.etc."vim/vimrc".text = ''
 set nocompatible
 syntax on

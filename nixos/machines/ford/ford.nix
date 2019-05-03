@@ -218,6 +218,8 @@ zramSwap.enable = true;
 zramSwap.memoryPercent = 100;
 zramSwap.numDevices = 1;
 boot.tmpOnTmpfs = true;
+
+boot.cleanTmpDir = true;
 #android_sdk.accept_license = true;
 
 environment.etc."nixos/active".text = config.system.nixos.label;
