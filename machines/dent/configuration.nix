@@ -10,10 +10,10 @@ in
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./machines/dent/services.nix
-      ./machines/dent/hardware-configuration.nix
-      ./machines/dent/boot.nix
-      ./machines/dent/packages.nix
+      ./services.nix
+      ./hardware-configuration.nix
+      ./boot.nix
+      ./packages.nix
 
       ./common/boot.nix
       ./common/common.nix
