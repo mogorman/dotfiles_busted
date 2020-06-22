@@ -17,7 +17,6 @@ in
 
       ./../../common/boot.nix
       ./../../common/common.nix
-      ./../../common/user.nixos
     ];
 
   networking.hostName = "dent"; # Define your hostname.
