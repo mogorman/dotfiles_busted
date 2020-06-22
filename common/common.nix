@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 let
     baseconfig = { allowUnfree = true;};
     unstable = import <unstable> { config= baseconfig;};
