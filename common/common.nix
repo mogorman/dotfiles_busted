@@ -13,6 +13,7 @@ in
 
   system.stateVersion = "19.09"; # Did you read the comment?
 
+  hardware.nitrokey.enable = true;
   programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
   security.pam.enableSSHAgentAuth = true;
 

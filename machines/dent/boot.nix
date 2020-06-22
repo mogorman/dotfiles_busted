@@ -62,4 +62,5 @@ SUBSYSTEMS=="input", ATTRS{name}=="SPOTLIGHT*", MODE="0660", TAG+="uaccess", GRO
   services.tlp.extraConfig = ''
     USB_BLACKLIST="1d50:60e6 20a0:4108"
   '';
+
 }
