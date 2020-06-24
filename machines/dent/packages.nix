@@ -9,7 +9,7 @@ in
   nixpkgs.overlays = [
     (import (builtins.fetchGit {
       url = "https://github.com/nix-community/emacs-overlay.git";
-      rev = "398f6810f99802c5d4c0e822092fdca0e1574277";
+      ref = "b6e5a5f5b4aac16072e3761018e4185f1067bb0e";
     }))
   ];
   environment.systemPackages = with pkgs; [
