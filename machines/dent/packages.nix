@@ -9,7 +9,7 @@ in
   nixpkgs.overlays = [
     (import (builtins.fetchGit {
       url = "https://github.com/nix-community/emacs-overlay.git";
-      ref = "b6e5a5f5b4aac16072e3761018e4185f1067bb0e";
+      ref = "66270257dde436cd434083746ae4a30ca4a870a0";
     }))
   ];
   environment.systemPackages = with pkgs; [
@@ -21,7 +21,7 @@ in
     wget
     screen
     nmap
-    tinc
+#    tinc
     bash
     shared_mime_info
     aspell
@@ -37,7 +37,7 @@ in
     netcat-openbsd
     moreutils
     acpi
-    tinc_pre
+#    tinc_pre
     tor
     torsocks
     tsocks
@@ -45,7 +45,7 @@ in
     whois
     nss
     atop
-    awscli
+#    awscli
     unrar
     bash-completion
     bashSnippets
@@ -58,7 +58,7 @@ in
     #user
     ack
     docker
-    packer
+#    packer
     gitAndTools.gitFull
     gitAndTools.git-crypt
     lsof
@@ -75,7 +75,7 @@ in
 #  pinentry_ncurses
     pinentry_gnome
     jq
-    flatpak
+#    flatpak
     direnv
     ispell
     imagemagick
@@ -140,7 +140,7 @@ in
     # unstable.soapysdr-with-plugins
     # unstable.limesuite
     # unstable.gnuradio-osmosdr
-    audacity
+#    audacity
     firefox
     firefox-devedition-bin
     slack
@@ -162,22 +162,22 @@ in
     unstable.tilix
     quicksynergy
 
-    etherape
+#    etherape
     yarn
     #  xdg-desktop-portal
     #  xdg-desktop-portal-gtk
     #  pipewire
     gqrx
-    curaLulzbot
+ #   curaLulzbot
     #  evtest
     #  wl-clipboard
     #  libinput
-    xorg.xeyes
+#    xorg.xeyes
     #  wev
     thefuck
-    vscode
+#    vscode
     trash-cli
-    pidgin-with-plugins
+ #   pidgin-with-plugins
     unstable.insomnia
     pass-otp
   ];
